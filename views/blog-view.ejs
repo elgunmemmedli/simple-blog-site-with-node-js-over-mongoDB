@@ -1,0 +1,106 @@
+<%- include('includes/head.ejs') %>
+    <body>
+        <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
+            <!-- Side Overlay-->
+            <%- include('includes/aside.ejs') %>
+            <!-- END Side Overlay -->
+
+            <!-- Sidebar -->
+            <!--
+                Sidebar Mini Mode - Display Helper classes
+
+                Adding 'smini-hide' class to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
+                Adding 'smini-show' class to an element will make it visible (opacity: 1) when the sidebar is in mini mode
+                    If you would like to disable the transition animation, make sure to also add the 'no-transition' class to your element
+
+                Adding 'smini-hidden' to an element will hide it when the sidebar is in mini mode
+                Adding 'smini-visible' to an element will show it (display: inline-block) only when the sidebar is in mini mode
+                Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
+            -->
+            <%- include('includes/nav.ejs') %>
+            <!-- END Sidebar -->
+
+            <!-- Header -->
+            <%- include('includes/header.ejs') %>
+            <!-- END Header -->
+
+            <!-- Main Container -->
+            <main id="main-container">
+                <!-- Hero -->
+                <div class="bg-image" style="background-image: url('/<%= blog.imageUrl %>');">
+                    <div class="bg-black-75">
+                        <div class="content content-top content-full text-center">
+                            <h1 class="font-w700 text-white mt-5 mb-3 invisible" data-toggle="appear">
+                               <%= blog.title %>
+                            </h1>
+                            <p class="invisible" data-toggle="appear" data-timeout="400">
+                                <a class="badge badge-pill badge-primary font-size-base px-3 py-2 mr-2 m-1" href="javascript:void(0)">
+                                   
+                                </a>
+                                <span class="badge badge-pill badge-primary font-size-base px-3 py-2 m-1">
+                                   
+                                </span>
+                            </p>
+                            <a class="btn btn-light" href="/manage-blog">
+                                <i class="fa fa-arrow-left mr-1"></i> Manage Posts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Hero -->
+
+                <!-- Page Content -->
+                <div class="content content-full">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-8 py-5">
+                            <!-- Story -->
+                            <!-- Magnific Popup (.js-gallery class is initialized in Helpers.magnific()) -->
+                            <!-- For more info and examples you can check out http://dimsemenov.com/plugins/magnific-popup/ -->
+                    
+                            <article class="js-gallery story">
+                                <%- blog.content %>
+                            </article>
+                            <!-- END Story -->
+
+                            <!-- Actions -->
+                            <div class="mt-5 d-flex justify-content-between push">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-light" data-toggle="tooltip" title="Like Story">
+                                        <i class="fa fa-thumbs-up text-primary"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-light" data-toggle="tooltip" title="Recommend">
+                                        <i class="fa fa-heart text-danger"></i>
+                                    </button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-light dropdown-toggle" id="dropdown-blog-story" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-share-alt mr-1"></i> Share
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right font-size-sm" aria-labelledby="dropdown-blog-story">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fab fa-fw fa-facebook mr-1"></i> Facebook
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fab fa-fw fa-twitter mr-1"></i> Twitter
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fab fa-fw fa-linkedin mr-1"></i> LinkedIn
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Actions -->
+
+                            <!-- Comments -->
+                         
+                            <!-- END Comments -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END Page Content -->
+            </main>
+            <!-- END Main Container -->
+
+            <!-- Footer -->
+            <%- include('includes/footer.ejs') %>
+    
